@@ -1,15 +1,11 @@
 import React, { memo } from 'react';
-import { TouchableOpacity, Image } from 'react-native';
+import { Image } from 'react-native';
 import { Repository } from '../../types';
 import { View, Text, SecondaryText } from '../Themed/index';
 import BottomTab from '../BottomTab';
-// import {
-//   getCountry,
-//   getJobPostingTimeFromNow,
-//   getRelocationStatus,
-// } from '../../utils';
 
 import styles from './styles';
+import { getTimeFromNow } from '../../utils';
 
 interface JobListItemProps {
   repository: Repository;
@@ -34,33 +30,29 @@ const RepositoryItem = ({ repository }: JobListItemProps) => {
             </Text>
           </View>
           <View style={styles.dataContainer}>
-            <SecondaryText numberOfLines={1} style={styles.jobText}>
+            <SecondaryText numberOfLines={3} style={styles.jobText}>
               {repository?.description}
             </SecondaryText>
           </View>
         </View>
       </View>
 
-      {/* <View style={styles.bottomSection}>
+      <View style={styles.bottomSection}>
         <View style={styles.bottomTabsContainer}>
-          <BottomTab title="Full Time" />
-          {getCountry(repository?.flagCode) && (
-            <BottomTab title={getCountry(repository?.flagCode) || ''} />
-          )}
-          <BottomTab title={getRelocationStatus(repository?.relocate)} />
+          <BottomTab isPublic={repository?.visibility === 'public'} />
+          <BottomTab text={`Forks: ${repository?.forks_count}`} />
+          <BottomTab text={`Size: ${repository?.size}`} />
         </View>
 
         <View style={styles.timeText}>
-          {!repository?.canApply && <BottomTab isExpired title="Expired" />}
-
           <SecondaryText
             numberOfLines={1}
             style={[styles.jobText, { textAlignVertical: 'center' }]}
           >
-            {getJobPostingTimeFromNow(repository?.createdAt)}
+            {getTimeFromNow(repository?.created_at)}
           </SecondaryText>
         </View>
-      </View> */}
+      </View>
     </View>
   );
 };

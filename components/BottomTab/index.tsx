@@ -5,22 +5,27 @@ import useColorScheme from '../../hooks/useColorScheme';
 
 import styles from './styles';
 
-interface JobListItemProps {
-  title: string;
-  isExpired?: boolean;
+interface BottomTabProps {
+  isPublic?: boolean;
+  text?: string;
 }
 
-const BottomTab = ({ title, isExpired = false }: JobListItemProps) => {
+const BottomTab = ({ isPublic = true, text }: BottomTabProps) => {
   const theme = useColorScheme();
-  const { bottomTab, danger } = Colors[theme];
+  const { vanHackBlue, success } = Colors[theme];
 
-  const containerStyle = isExpired
-    ? [styles.container, { backgroundColor: danger }]
-    : [styles.container, { backgroundColor: bottomTab }];
+  const containerStyle =
+    isPublic && text
+      ? [styles.container, { backgroundColor: vanHackBlue }]
+      : [styles.container, { backgroundColor: success }];
 
   return (
     <View style={containerStyle}>
-      <Text style={styles.jobText}>{title}</Text>
+      {text ? (
+        <Text style={styles.jobText}>{text}</Text>
+      ) : (
+        <Text style={styles.jobText}>{isPublic ? 'PUBLIC' : 'PRIVATE'}</Text>
+      )}
     </View>
   );
 };
