@@ -19,3 +19,7 @@
 
 ## Screenshots
 
+![Simulator Screen Shot - iPhone 12 Pro - 2021-11-10 at 04 06 26](https://user-images.githubusercontent.com/8383707/141043185-cff58249-7de1-4222-9f83-bd2a61efee1e.png)
+![Simulator Screen Shot - iPhone 12 Pro - 2021-11-10 at 04 06 57](https://user-images.githubusercontent.com/8383707/141043286-03fd1798-4e36-4a34-b45e-e4ee694a9d12.png)
+![Simulator Screen Shot - iPhone 12 Pro - 2021-11-10 at 04 06 59](https://user-images.githubusercontent.com/8383707/141043295-adfcd713-ec1d-4859-bfd7-61b1d7399298.png)
+![Simulator Screen Shot - iPhone 12 Pro - 2021-11-10 at 04 07 23](https://user-images.githubusercontent.com/8383707/141043302-85f35f24-9b50-4430-9dc2-b52bcf2b5d03.png)
