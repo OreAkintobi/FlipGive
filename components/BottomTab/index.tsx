@@ -12,11 +12,11 @@ interface BottomTabProps {
 
 const BottomTab = ({ isPublic = true, text }: BottomTabProps) => {
   const theme = useColorScheme();
-  const { vanHackBlue, success } = Colors[theme];
+  const { flipGiveBlue, success } = Colors[theme];
 
   const containerStyle =
     isPublic && text
-      ? [styles.container, { backgroundColor: vanHackBlue }]
+      ? [styles.container, { backgroundColor: flipGiveBlue }]
       : [styles.container, { backgroundColor: success }];
 
   return (

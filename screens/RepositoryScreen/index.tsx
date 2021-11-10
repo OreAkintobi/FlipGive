@@ -1,4 +1,3 @@
-import { unwrapResult } from '@reduxjs/toolkit';
 import React, { useState } from 'react';
 import { ActivityIndicator, FlatList, TouchableOpacity } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,7 +17,7 @@ export default function TabOneScreen({
 }: RootTabScreenProps<'TabOne'>) {
   const dispatch = useDispatch();
   const theme = useColorScheme();
-  const { danger, vanHackBlue, inactive } = Colors[theme];
+  const { danger, flipGiveBlue, inactive, background, text } = Colors[theme];
   const { repositories, loading, error } = useSelector(
     (state: RootState) => state.githubData
   );
@@ -47,7 +46,7 @@ export default function TabOneScreen({
           styles.button,
           styles.inputContainer,
           {
-            backgroundColor: user ? vanHackBlue : inactive,
+            backgroundColor: user ? flipGiveBlue : inactive,
             opacity: user ? 1 : 0.5,
           },
         ]}

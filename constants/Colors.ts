@@ -6,7 +6,7 @@ const darkGray = '#3a3b43';
 export const common = {
   danger: 'red',
   success: '#40975d',
-  vanHackBlue: '#0575ce',
+  flipGiveBlue: '#47afb9',
   inactive: lightGray,
 };
 

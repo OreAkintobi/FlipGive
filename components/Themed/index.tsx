@@ -13,7 +13,7 @@ export function Text(props: TextProps) {
 
   return (
     <DefaultText
-      style={[{ color, fontFamily: 'space-mono' }, style]}
+      style={[{ color, fontFamily: 'cerebri-sans' }, style]}
       {...otherProps}
     />
   );
@@ -24,7 +24,7 @@ export function Input(props: TextInputProps) {
 
   return (
     <DefaultTextInput
-      style={[{ color, fontFamily: 'space-mono' }, style]}
+      style={[{ color, fontFamily: 'cerebri-sans' }, style]}
       {...otherProps}
     />
   );
@@ -39,7 +39,7 @@ export function SecondaryText(props: TextProps) {
 
   return (
     <DefaultText
-      style={[{ color, fontFamily: 'space-mono' }, style]}
+      style={[{ color, fontFamily: 'cerebri-sans' }, style]}
       {...otherProps}
     />
   );
