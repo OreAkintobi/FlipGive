@@ -9,7 +9,8 @@
    - write some tests (tests to ensure that each part of the app renders properly, as well as tests for the API and the util functions.
    - add dynamic search results rendering so the search runs after 2 or 3 seconds of the user not typing any added text.
    - use [styled-components](https://styled-components.com/) to properly create a theming structure and more robust way to expose my screens and components to colors, fonts, et cetera
-5. **Screenshots** of the project on iOS and Android devices are below.
+5. Handle Pagination
+6. **Screenshots** of the project on iOS and Android devices are below.
 
 ## How to run the project
 
