@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { GITHUB_TOKEN } from '@env';
+
 import { Repository } from '../types';
 
 export const fetchGithubData = createAsyncThunk(
@@ -8,7 +10,7 @@ export const fetchGithubData = createAsyncThunk(
     const response = await fetch(`https://api.github.com/users/${user}/repos`, {
       method: 'GET',
       headers: {
-        Authorization: 'token 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',
+        Authorization: `token ${GITHUB_TOKEN}`,
       },
     });
     const resp = await response.json();
