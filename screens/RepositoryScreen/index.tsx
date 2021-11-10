@@ -1,3 +1,4 @@
+import { unwrapResult } from '@reduxjs/toolkit';
 import React, { useState } from 'react';
 import { ActivityIndicator, FlatList, TouchableOpacity } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,6 +27,10 @@ export default function TabOneScreen({
 
   const renderItem = ({ item }: any) => <RepositoryItem repository={item} />;
 
+  const fetchRepos = () => {
+    dispatch(fetchGithubData(user.trim()));
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
@@ -46,7 +51,7 @@ export default function TabOneScreen({
             opacity: user ? 1 : 0.5,
           },
         ]}
-        onPress={() => dispatch(fetchGithubData(user))}
+        onPress={fetchRepos}
       >
         <Text style={{ color: Colors[theme].background }}>
           {user ? `Search for ${user}` : 'Please Enter a User'}
@@ -62,21 +67,13 @@ export default function TabOneScreen({
           <FlatList
             data={repositories}
             renderItem={renderItem}
-            keyExtractor={(item) => item.id.toString()}
-            onRefresh={() => dispatch(fetchGithubData(user))}
+            keyExtractor={(item) => item?.name}
+            onRefresh={fetchRepos}
             refreshing={loading}
             ListHeaderComponent={
               <View style={styles.headerView}>
                 <Text style={styles.headerText}>
                   Get Github Repositories for {user ? user : 'A User'}
-                </Text>
-              </View>
-            }
-            ListEmptyComponent={
-              <View style={styles.headerView}>
-                <Text style={styles.headerText}>
-                  User {user ? user : 'A User'} either does not exist or has no
-                  repositories
                 </Text>
               </View>
             }
